@@ -2,16 +2,27 @@
   "name": "spark-box",
   "version": "0.1.0",
   "private": true,
+  "description": "灵感盒：周末能做完的 vibe coding 小项目。",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lhf2018/spark-box.git"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4317 -H 127.0.0.1",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 4317 -H 127.0.0.1",
     "lint": "eslint"
   },
   "dependencies": {
+    "@radix-ui/react-slider": "^1.6.1",
+    "@radix-ui/react-slot": "^1.5.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.59.0",
     "next": "16.4.2",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",

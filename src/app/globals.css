@@ -1,26 +1,183 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #e6f4ee;
+  --foreground: #14332e;
+  --pine: #143f38;
+  --lagoon: #1c7d6c;
+  --foam: #f5fffb;
+  --mist: #d4eee4;
+  --ink: #102824;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-pine: var(--pine);
+  --color-lagoon: var(--lagoon);
+  --color-foam: var(--foam);
+  --color-mist: var(--mist);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-outfit), var(--font-noto), sans-serif;
+  --font-display: var(--font-fraunces), var(--font-zcool), serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit), var(--font-noto), sans-serif;
+}
+
+::selection {
+  background: #8fd4c4;
+  color: var(--ink);
+}
+
+@keyframes fog-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8%, 5%, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes fog-drift-alt {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+  50% {
+    transform: translate3d(-12%, 3%, 0) scale(0.96);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes swap-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes line-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes grain-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(-1.5%, 1%, 0);
+  }
+  50% {
+    transform: translate3d(1%, -1.5%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes poke {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  35% {
+    transform: translateY(-22px) scale(0.9, 1.1);
+  }
+  70% {
+    transform: translateY(2px) scale(1.08, 0.92);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+.fog-a {
+  animation: fog-drift 26s ease-in-out infinite;
+}
+
+.fog-b {
+  animation: fog-drift-alt 32s ease-in-out infinite;
+}
+
+.rise-in {
+  animation: rise-in 0.9s ease both;
+}
+
+.rise-in-late {
+  animation: rise-in 0.95s 0.16s ease both;
+}
+
+.horizon {
+  transform-origin: left center;
+  animation: line-grow 1.1s 0.25s ease both;
+}
+
+.swap-in {
+  animation: swap-in 0.45s ease both;
+}
+
+.idea-row {
+  animation: rise-in 0.55s ease both;
+}
+
+.pet-poke {
+  animation: poke 0.55s ease;
+}
+
+.grain {
+  animation: grain-shift 1.6s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fog-a,
+  .fog-b,
+  .rise-in,
+  .rise-in-late,
+  .horizon,
+  .swap-in,
+  .idea-row,
+  .pet-poke,
+  .grain {
+    animation: none !important;
+  }
 }

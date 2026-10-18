@@ -1,0 +1,198 @@
+export const moods = ["氛围感", "好玩", "实用好看", "有手感"] as const;
+
+export type Mood = (typeof moods)[number];
+
+export type Idea = {
+  id: string;
+  title: string;
+  hook: string;
+  why: string;
+  stack: string[];
+  weekend: string;
+  mood: Mood;
+  spark: string;
+  playable: boolean;
+};
+
+export const ideas: Idea[] = [
+  {
+    id: "rain-mixer",
+    title: "雨声混音器",
+    hook: "把窗外的雨调到刚好能专心的程度。",
+    why: "白噪音是最短的氛围项目，一场雨就能把 Canvas 和 Web Audio 接在一起。",
+    stack: ["Canvas", "Web Audio"],
+    weekend: "周六下午",
+    mood: "氛围感",
+    spark: "雨量滑过一半时，滴落变密，滤波噪声也跟着变厚。",
+    playable: true,
+  },
+  {
+    id: "typewriter-journal",
+    title: "今日一张纸",
+    hook: "只写今天，退格会留下擦过的痕迹。",
+    why: "限制成一张纸，比无限笔记更想动笔。擦痕让删掉的句子还在。",
+    stack: ["localStorage", "CSS"],
+    weekend: "周日早晨",
+    mood: "有手感",
+    spark: "退格不把字彻底忘掉，只把它们抹成纸上的浅痕。",
+    playable: true,
+  },
+  {
+    id: "pixel-weather",
+    title: "像素天气窗",
+    hook: "用十六色把今天的天气压成一扇小窗。",
+    why: "晴、雾、雷共用一套色板，差别全在云怎么走。适合练一个很小的状态机。",
+    stack: ["Canvas", "CSS"],
+    weekend: "一个晚上",
+    mood: "好玩",
+    spark: "同一套色板切换天气时，云的步调和雨的方向都不一样。",
+    playable: false,
+  },
+  {
+    id: "cafe-pomodoro",
+    title: "咖啡馆番茄钟",
+    hook: "二十五分钟的灯光，会跟着你慢慢变暖。",
+    why: "计时器谁都会写。光跟着进度走，它才像一张真正的桌子。",
+    stack: ["CSS", "计时"],
+    weekend: "周六晚上",
+    mood: "实用好看",
+    spark: "专注到最后五分钟，桌灯会明显更亮。",
+    playable: true,
+  },
+  {
+    id: "mood-palette",
+    title: "情绪色板",
+    hook: "丢一个词进去，吐出五枚能用的颜色。",
+    why: "配色是每天都要做的小决定。oklch 让同一个词永远得到同一套颜色。",
+    stack: ["oklch", "Clipboard"],
+    weekend: "周日下午",
+    mood: "实用好看",
+    spark: "点任何一枚色块，就把 oklch 值复制走。",
+    playable: true,
+  },
+  {
+    id: "desk-pet",
+    title: "桌面小动物",
+    hook: "一只会打瞌睡、被戳就醒的桌宠。",
+    why: "闲置动画比再做一个按钮更有生命。你不理它，它就自己过日子。",
+    stack: ["SVG", "requestAnimationFrame"],
+    weekend: "一个周末",
+    mood: "好玩",
+    spark: "安静一会儿，它会闭上眼，慢慢挪到另一边。",
+    playable: true,
+  },
+  {
+    id: "film-clock",
+    title: "电影时钟",
+    hook: "把现在这个时刻，做成一条字幕。",
+    why: "时钟是最小的实时界面。字幕和暗角一下就把气氛定住。",
+    stack: ["CSS", "Intl"],
+    weekend: "周五夜里",
+    mood: "氛围感",
+    spark: "秒数用很淡的字走着，像片尾还没结束。",
+    playable: true,
+  },
+  {
+    id: "synth-pad",
+    title: "四个键的合成器",
+    hook: "不用会乐理，按下去就有一块声音。",
+    why: "四个和弦垫音比整排琴键更容易做完，也更容易玩下去。",
+    stack: ["Web Audio"],
+    weekend: "周六",
+    mood: "有手感",
+    spark: "按住不放，音色会慢慢变厚。",
+    playable: false,
+  },
+  {
+    id: "walk-art",
+    title: "散步成画",
+    hook: "用今天走的步数，长出一张抽象画。",
+    why: "把一个数字变成痕迹，比再画一张图表更记得住。",
+    stack: ["Canvas"],
+    weekend: "周日",
+    mood: "氛围感",
+    spark: "步数少是细线，步数多就铺成一层雾。",
+    playable: false,
+  },
+  {
+    id: "brew-timer",
+    title: "手冲计时条",
+    hook: "一条会呼吸的时间轴，管住一杯咖啡的四段水。",
+    why: "手冲有明确节奏，适合做成看得见的分段计时。",
+    stack: ["CSS"],
+    weekend: "一个早晨",
+    mood: "实用好看",
+    spark: "每一段结束，下一段的颜色会提前亮起来。",
+    playable: false,
+  },
+  {
+    id: "sticky-wall",
+    title: "便签墙",
+    hook: "把脑子里的三件事贴在一面会轻轻晃的墙上。",
+    why: "本地便签是经典小项目。晃动和让位让它不像一张表。",
+    stack: ["localStorage"],
+    weekend: "周六上午",
+    mood: "实用好看",
+    spark: "拖一张便签，旁边的便签会微微让开。",
+    playable: false,
+  },
+  {
+    id: "city-generator",
+    title: "城市生成器",
+    hook: "点一次，长出一座只存在今晚的小城。",
+    why: "程序化生成最容易让人想再来一次。种子相同，城市就相同。",
+    stack: ["Canvas"],
+    weekend: "周日晚上",
+    mood: "好玩",
+    spark: "记住种子，明天还能长出同一座城。",
+    playable: false,
+  },
+  {
+    id: "reading-ring",
+    title: "阅读环",
+    hook: "今晚读了多少，化成一枚慢慢合上的环。",
+    why: "进度环比百分比更安静，适合放在书旁边。",
+    stack: ["SVG"],
+    weekend: "一个晚上",
+    mood: "有手感",
+    spark: "读完一章，环上会多一段暖色。",
+    playable: false,
+  },
+  {
+    id: "idle-aquarium",
+    title: "挂机水族箱",
+    hook: "不用喂，鱼也会自己过完一个下午。",
+    why: "闲置动画是最容易让人把页面留着的东西。",
+    stack: ["Canvas"],
+    weekend: "周六下午",
+    mood: "好玩",
+    spark: "两条鱼靠近时，会短暂地并排游一段。",
+    playable: false,
+  },
+  {
+    id: "late-radio",
+    title: "深夜电台",
+    hook: "一个只有三个台的收音机，专门留给很晚的时候。",
+    why: "假电台能练音频切换和文案，不必接真正的直播。",
+    stack: ["Web Audio"],
+    weekend: "周五夜里",
+    mood: "氛围感",
+    spark: "换台时先沙沙一声，再落入下一段旋律。",
+    playable: false,
+  },
+  {
+    id: "plant-care",
+    title: "植物值日生",
+    hook: "记住三盆植物什么时候该喝水。",
+    why: "浇水间隔是真的生活需求，做完就能摆在桌上用。",
+    stack: ["localStorage"],
+    weekend: "周日",
+    mood: "实用好看",
+    spark: "到了浇水日，叶子会比平时更亮一点。",
+    playable: false,
+  },
+];
+
+export function getIdea(id: string) {
+  return ideas.find((idea) => idea.id === id);
+}
