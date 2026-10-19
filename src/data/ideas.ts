@@ -46,7 +46,7 @@ export const ideas: Idea[] = [
     weekend: "一个晚上",
     mood: "好玩",
     spark: "同一套色板切换天气时，云的步调和雨的方向都不一样。",
-    playable: false,
+    playable: true,
   },
   {
     id: "cafe-pomodoro",
@@ -101,7 +101,7 @@ export const ideas: Idea[] = [
     weekend: "周六",
     mood: "有手感",
     spark: "按住不放，音色会慢慢变厚。",
-    playable: false,
+    playable: true,
   },
   {
     id: "walk-art",
@@ -112,7 +112,7 @@ export const ideas: Idea[] = [
     weekend: "周日",
     mood: "氛围感",
     spark: "步数少是细线，步数多就铺成一层雾。",
-    playable: false,
+    playable: true,
   },
   {
     id: "brew-timer",
@@ -123,7 +123,7 @@ export const ideas: Idea[] = [
     weekend: "一个早晨",
     mood: "实用好看",
     spark: "每一段结束，下一段的颜色会提前亮起来。",
-    playable: false,
+    playable: true,
   },
   {
     id: "sticky-wall",
@@ -134,7 +134,7 @@ export const ideas: Idea[] = [
     weekend: "周六上午",
     mood: "实用好看",
     spark: "拖一张便签，旁边的便签会微微让开。",
-    playable: false,
+    playable: true,
   },
   {
     id: "city-generator",
@@ -145,7 +145,7 @@ export const ideas: Idea[] = [
     weekend: "周日晚上",
     mood: "好玩",
     spark: "记住种子，明天还能长出同一座城。",
-    playable: false,
+    playable: true,
   },
   {
     id: "reading-ring",
@@ -156,7 +156,7 @@ export const ideas: Idea[] = [
     weekend: "一个晚上",
     mood: "有手感",
     spark: "读完一章，环上会多一段暖色。",
-    playable: false,
+    playable: true,
   },
   {
     id: "idle-aquarium",
@@ -167,7 +167,7 @@ export const ideas: Idea[] = [
     weekend: "周六下午",
     mood: "好玩",
     spark: "两条鱼靠近时，会短暂地并排游一段。",
-    playable: false,
+    playable: true,
   },
   {
     id: "late-radio",
@@ -178,7 +178,7 @@ export const ideas: Idea[] = [
     weekend: "周五夜里",
     mood: "氛围感",
     spark: "换台时先沙沙一声，再落入下一段旋律。",
-    playable: false,
+    playable: true,
   },
   {
     id: "plant-care",
@@ -189,7 +189,7 @@ export const ideas: Idea[] = [
     weekend: "周日",
     mood: "实用好看",
     spark: "到了浇水日，叶子会比平时更亮一点。",
-    playable: false,
+    playable: true,
   },
 ];
 

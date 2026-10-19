@@ -44,8 +44,7 @@ function EmptyPlay({
 }) {
   return (
     <div className="mx-auto flex min-h-[70svh] max-w-xl flex-col justify-center px-5 py-20">
-      <p className="text-xs tracking-[0.32em] text-lagoon uppercase">Still in the box</p>
-      <h1 className="font-display mt-3 text-5xl text-ink">
+      <h1 className="font-display text-5xl text-ink">
         {title ?? "没有这个点子"}
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-pine/80">

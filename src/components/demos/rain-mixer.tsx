@@ -171,8 +171,8 @@ export default function RainMixer() {
   return (
     <section className="relative h-[calc(100svh-3.5rem)] min-h-[32rem]">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
-      <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-6">
-        <div className="mx-auto max-w-xl rounded-3xl border border-white/50 bg-foam/80 p-5 shadow-sm backdrop-blur-md">
+      <div className="absolute inset-x-0 bottom-0 z-10">
+        <div className="border-t border-pine/15 bg-foam/92 px-5 py-4 sm:px-8">
           <div className="flex items-center justify-between gap-3">
             <div>
               <h1 className="font-display text-3xl text-ink">雨声混音器</h1>

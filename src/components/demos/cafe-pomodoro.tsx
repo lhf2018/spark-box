@@ -53,10 +53,7 @@ export default function CafePomodoro() {
       className="flex min-h-[calc(100svh-3.5rem)] flex-col items-center justify-center px-5 py-16 transition-[background-color] duration-700"
       style={{ backgroundColor: light }}
     >
-      <p className="text-xs tracking-[0.32em] text-pine/70 uppercase">
-        {mode === "focus" ? "Focus · 25:00" : "Break · 05:00"}
-      </p>
-      <h1 className="font-display mt-3 text-center text-4xl text-ink sm:text-5xl">咖啡馆番茄钟</h1>
+      <h1 className="font-display text-center text-4xl text-ink sm:text-5xl">咖啡馆番茄钟</h1>
       <p
         className="font-display mt-10 text-[clamp(4.5rem,16vw,8rem)] leading-none text-ink tabular-nums"
         aria-live="polite"
@@ -67,7 +64,7 @@ export default function CafePomodoro() {
         {mode === "focus" ? "灯光会跟着这二十五分钟慢慢变暖。" : "休息五分钟，光线收一点。"}
       </p>
       <div
-        className="mt-8 h-1.5 w-56 overflow-hidden rounded-full bg-pine/10"
+        className="mt-8 h-1 w-56 overflow-hidden bg-pine/10"
         aria-hidden
       >
         <div

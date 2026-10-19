@@ -1,6 +1,6 @@
 # 灵感盒
 
-周末能做完的 vibe coding 灵感盒。首页放着十六个小项目点子，可以按心情筛选、随机抽一个、收藏。其中六个已经做成能打开玩的 demo。
+周末能做完的 vibe coding 灵感盒。首页放着十六个小项目点子，可以按心情筛选、随机抽一个、收藏。十六个点子都能打开玩。
 
 仓库 / npm 包名：`spark-box`
 
@@ -32,8 +32,16 @@ npm start
 | `/play/mood-palette` | 情绪色板：一个词生成五枚 oklch 颜色 |
 | `/play/film-clock` | 电影时钟：字幕风格的实时时钟 |
 | `/play/desk-pet` | 桌面小动物：戳它会醒，闲下来会打瞌睡 |
-
-另外十个点子只在首页展示，点进去会看到还停在纸面上的说明。
+| `/play/pixel-weather` | 像素天气窗：十六色小窗，切换晴、雾、雷 |
+| `/play/synth-pad` | 四个键的合成器：按住，音色会变厚 |
+| `/play/walk-art` | 散步成画：步数长成细线或雾 |
+| `/play/brew-timer` | 手冲计时条：四段水，下一段会提前亮 |
+| `/play/sticky-wall` | 便签墙：拖一张，旁边的会让开 |
+| `/play/city-generator` | 城市生成器：种子相同，城市就相同 |
+| `/play/reading-ring` | 阅读环：读完一章，环上多一段暖色 |
+| `/play/idle-aquarium` | 挂机水族箱：鱼靠近时会并排游 |
+| `/play/late-radio` | 深夜电台：三个台，换台先沙沙一声 |
+| `/play/plant-care` | 植物值日生：到浇水日，叶子更亮 |
 
 ## 技术栈
 

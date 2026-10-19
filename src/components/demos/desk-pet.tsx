@@ -55,8 +55,7 @@ export default function DeskPet() {
   return (
     <section className="relative min-h-[calc(100svh-3.5rem)] overflow-hidden bg-[linear-gradient(180deg,#f4fbf8_0%,#d5eee6_70%,#c5e4da_100%)]">
       <div className="px-5 pt-10 sm:px-8">
-        <p className="text-xs tracking-[0.28em] text-lagoon uppercase">Desk mate</p>
-        <h1 className="font-display mt-2 text-4xl text-ink">桌面小动物</h1>
+        <h1 className="font-display text-4xl text-ink">桌面小动物</h1>
         <p className="mt-2 text-sm text-pine/75">
           {sleepy ? "它打起瞌睡，自己慢慢挪开了。" : "戳它一下。你不去理它，它就会睡着。"}
         </p>

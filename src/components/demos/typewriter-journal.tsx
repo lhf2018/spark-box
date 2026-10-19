@@ -93,11 +93,10 @@ export default function TypewriterJournal() {
 
   return (
     <section className="mx-auto flex min-h-[calc(100svh-3.5rem)] max-w-3xl flex-col px-5 py-10 sm:px-8">
-      <p className="text-xs tracking-[0.28em] text-lagoon uppercase">Today only</p>
-      <h1 className="font-display mt-2 text-4xl text-ink sm:text-5xl">今日一张纸</h1>
+      <h1 className="font-display text-4xl text-ink sm:text-5xl">今日一张纸</h1>
       <p className="mt-3 text-sm text-pine/70">{dateLabel} · 退格会留下擦痕，写完就留在这台机器上。</p>
 
-      <div className="relative mt-8 min-h-[28rem] flex-1 overflow-hidden rounded-[2rem] border border-pine/10 bg-[#f7fffb] shadow-[0_30px_80px_-48px_rgba(20,63,56,0.45)]">
+      <div className="relative mt-8 min-h-[28rem] flex-1 overflow-hidden border border-pine/15 bg-paper">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
           {marks.map((mark, index) => (
             <span

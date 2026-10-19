@@ -75,20 +75,15 @@ export function IdeaBrowser() {
   }
 
   return (
-    <section id="ideas" className="scroll-mt-6 border-t border-pine/10 bg-[#f4fbf8]">
+    <section id="ideas" className="scroll-mt-6 border-t border-pine/10">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-xs tracking-[0.32em] text-lagoon uppercase">Browse</p>
-            <h2 className="font-display mt-2 text-4xl text-ink sm:text-5xl">盒子里</h2>
-          </div>
-          <p className="max-w-sm text-sm leading-6 text-pine/75">
-            心情先收窄，再抽一张。标了可玩的，现在就能打开。
-          </p>
-        </div>
+        <h2 className="font-display text-4xl text-ink sm:text-5xl">盒子里</h2>
+        <p className="mt-3 max-w-md text-base leading-7 text-pine/80">
+          先按心情收一收，再抽一张。
+        </p>
 
-        <div className="mt-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap gap-2" role="group" aria-label="按心情筛选">
+        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap gap-x-5 gap-y-2" role="group" aria-label="按心情筛选">
             <FilterButton active={mood === "全部"} onClick={() => setMood("全部")}>
               全部
             </FilterButton>
@@ -102,17 +97,20 @@ export function IdeaBrowser() {
               </FilterButton>
             ))}
           </div>
-          <div className="flex flex-wrap gap-2">
-            <Button
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <button
               type="button"
-              variant={favoritesOnly ? "default" : "outline"}
               onClick={() => setFavoritesOnly((value) => !value)}
               aria-pressed={favoritesOnly}
+              className={cn(
+                "inline-flex items-center gap-2 text-sm",
+                favoritesOnly ? "text-ink" : "text-pine/70",
+              )}
             >
-              <Star fill={favoritesOnly ? "currentColor" : "none"} />
+              <Star className="size-4" fill={favoritesOnly ? "currentColor" : "none"} />
               只看收藏
-            </Button>
-            <Button type="button" variant="lagoon" onClick={drawOne}>
+            </button>
+            <Button type="button" onClick={drawOne}>
               再抽一个
             </Button>
           </div>
@@ -160,15 +158,17 @@ function FilterButton({
   onClick: () => void;
 }) {
   return (
-    <Button
+    <button
       type="button"
-      variant={active ? "default" : "outline"}
-      size="sm"
       onClick={onClick}
       aria-pressed={active}
+      className={cn(
+        "text-sm underline-offset-4",
+        active ? "text-ink underline" : "text-pine/60 hover:text-ink",
+      )}
     >
       {children}
-    </Button>
+    </button>
   );
 }
 
@@ -176,10 +176,10 @@ function DrawnBanner({ idea }: { idea: Idea }) {
   return (
     <div
       key={idea.id}
-      className="swap-in mt-8 border-y border-pine/15 py-6"
+      className="swap-in mt-8"
       aria-live="polite"
     >
-      <p className="text-xs tracking-[0.28em] text-lagoon uppercase">抽到了</p>
+      <p className="text-sm text-lagoon">抽到了</p>
       <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h3 className="font-display text-4xl text-ink">{idea.title}</h3>
@@ -216,7 +216,6 @@ function IdeaRow({
       style={style}
       className={cn(
         "idea-row scroll-mt-24 grid gap-4 border-t border-pine/10 py-7 md:grid-cols-[4.5rem_minmax(0,1fr)_auto] md:items-start",
-        active && "bg-white/55",
       )}
     >
       <p className="font-display text-3xl text-lagoon/80">
@@ -224,11 +223,11 @@ function IdeaRow({
       </p>
       <div>
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <h3 className="font-display text-3xl text-ink">{idea.title}</h3>
-          <span className="text-sm text-lagoon">{idea.mood}</span>
-          {idea.playable ? (
-            <span className="text-sm text-pine/70">可玩</span>
-          ) : null}
+          <h3 className={cn("font-display text-3xl", active ? "text-lagoon" : "text-ink")}>
+            {idea.title}
+          </h3>
+          <span className="text-sm text-pine/60">{idea.mood}</span>
+          {idea.playable ? <span className="text-sm text-pine/60">可玩</span> : null}
         </div>
         <p className="mt-2 max-w-2xl text-base text-pine">{idea.hook}</p>
         <p className="mt-2 max-w-2xl text-sm leading-6 text-pine/70">{idea.why}</p>

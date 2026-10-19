@@ -66,8 +66,7 @@ export default function MoodPalette() {
 
   return (
     <section className="mx-auto flex min-h-[calc(100svh-3.5rem)] max-w-5xl flex-col px-5 py-10 sm:px-8">
-      <p className="text-xs tracking-[0.28em] text-lagoon uppercase">oklch</p>
-      <h1 className="font-display mt-2 text-4xl text-ink sm:text-5xl">情绪色板</h1>
+      <h1 className="font-display text-4xl text-ink sm:text-5xl">情绪色板</h1>
       <p className="mt-3 max-w-xl text-sm leading-6 text-pine/75">
         同一个词永远得到同一套五色。点一块，复制它的 oklch。
       </p>
@@ -80,7 +79,7 @@ export default function MoodPalette() {
           value={word}
           onChange={(event) => setWord(event.target.value)}
           placeholder="比如：雾、想家、刚下班"
-          className="h-12 flex-1 rounded-full border border-pine/15 bg-foam/70 px-5 text-ink outline-none focus-visible:ring-2 focus-visible:ring-lagoon"
+          className="h-12 flex-1 rounded-sm border border-pine/15 bg-foam/70 px-4 text-ink outline-none focus-visible:ring-2 focus-visible:ring-lagoon"
         />
         <Button type="submit">生成色板</Button>
       </form>
@@ -90,7 +89,7 @@ export default function MoodPalette() {
             key={swatch.value}
             type="button"
             onClick={() => void copy(swatch.value)}
-            className="flex min-h-44 flex-col justify-between rounded-3xl p-4 text-left transition-transform duration-200 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-pine focus-visible:outline-none"
+            className="flex min-h-44 flex-col justify-between p-4 text-left focus-visible:ring-2 focus-visible:ring-pine focus-visible:outline-none"
             style={{ backgroundColor: swatch.value }}
           >
             <span className="font-display text-2xl text-ink/80">{swatch.label}</span>

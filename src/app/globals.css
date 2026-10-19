@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #e6f4ee;
+  --background: #e4f3ec;
   --foreground: #14332e;
   --pine: #143f38;
   --lagoon: #1c7d6c;
-  --foam: #f5fffb;
-  --mist: #d4eee4;
+  --foam: #f4fbf8;
+  --mist: #c5e4d8;
   --ink: #102824;
+  --box: #123f36;
+  --paper: #f7fffb;
+  --radius: 2px;
 }
 
 @theme inline {
@@ -18,6 +21,9 @@
   --color-foam: var(--foam);
   --color-mist: var(--mist);
   --color-ink: var(--ink);
+  --color-box: var(--box);
+  --color-paper: var(--paper);
+  --radius-brand: var(--radius);
   --font-sans: var(--font-outfit), var(--font-noto), sans-serif;
   --font-display: var(--font-fraunces), var(--font-zcool), serif;
 }
@@ -32,7 +38,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(900px 480px at 0% 0%, rgba(255, 255, 255, 0.55), transparent 60%),
+    linear-gradient(180deg, #e7f5ef 0%, #d5eee4 100%);
   color: var(--foreground);
   font-family: var(--font-outfit), var(--font-noto), sans-serif;
 }
@@ -97,6 +106,26 @@ body {
   }
 }
 
+@keyframes lid-drift {
+  0%,
+  100% {
+    transform: rotate(-1.4deg);
+  }
+  50% {
+    transform: rotate(1.2deg);
+  }
+}
+
+@keyframes light-pass {
+  0%,
+  100% {
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 0.42;
+  }
+}
+
 @keyframes grain-shift {
   0% {
     transform: translate3d(0, 0, 0);
@@ -125,6 +154,16 @@ body {
   100% {
     transform: translateY(0) scale(1, 1);
   }
+}
+
+.box-lid {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: lid-drift 9s ease-in-out infinite;
+}
+
+.window-light {
+  animation: light-pass 8s ease-in-out infinite;
 }
 
 .fog-a {
@@ -164,6 +203,21 @@ body {
   animation: grain-shift 1.6s steps(2) infinite;
 }
 
+@keyframes brew-breathe {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.12);
+  }
+}
+
+.brew-breathe {
+  transform-origin: bottom center;
+  animation: brew-breathe 2.4s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -171,13 +225,16 @@ body {
 
   .fog-a,
   .fog-b,
+  .box-lid,
+  .window-light,
   .rise-in,
   .rise-in-late,
   .horizon,
   .swap-in,
   .idea-row,
   .pet-poke,
-  .grain {
+  .grain,
+  .brew-breathe {
     animation: none !important;
   }
 }
